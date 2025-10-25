@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://doafvi0pkfxmj"]
+
+[ext_resource type="Texture2D" uid="uid://2vtvppnteb5l" path="res://assets/avert.png" id="1_a163b"]
+[ext_resource type="Script" uid="uid://cp5jo8g7fouvo" path="res://scenes/enemies/glitchling.gd" id="1_fjvs1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjvs1"]
+size = Vector2(82, 82)
+
+[node name="Glitchling" type="CharacterBody2D"]
+script = ExtResource("1_fjvs1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5707964
+texture = ExtResource("1_a163b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_fjvs1")

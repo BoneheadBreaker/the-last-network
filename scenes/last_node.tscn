@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcfq53ckow2a5"]
+[gd_scene load_steps=4 format=3 uid="uid://dcfq53ckow2a5"]
 
+[ext_resource type="Script" uid="uid://bay35sp2pva6f" path="res://scenes/last_node.gd" id="1_ceetr"]
 [ext_resource type="Texture2D" uid="uid://baau3mx74qsbh" path="res://assets/shockwave-tower.png" id="1_hxgi5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hxgi5"]
 size = Vector2(96, 96)
 
 [node name="LastNode" type="Node2D"]
+script = ExtResource("1_ceetr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(4.7683716e-07, 4.7683716e-07)
