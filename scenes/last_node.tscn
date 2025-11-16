@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dcfq53ckow2a5"]
 
-[ext_resource type="Script" uid="uid://bay35sp2pva6f" path="res://scenes/last_node.gd" id="1_ceetr"]
+[ext_resource type="Script" uid="uid://bay35sp2pva6f" path="res://scripts/last_node.gd" id="1_ceetr"]
 [ext_resource type="Texture2D" uid="uid://baau3mx74qsbh" path="res://assets/shockwave-tower.png" id="1_hxgi5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hxgi5"]
@@ -13,5 +13,7 @@ script = ExtResource("1_ceetr")
 position = Vector2(4.7683716e-07, 4.7683716e-07)
 texture = ExtResource("1_hxgi5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_hxgi5")

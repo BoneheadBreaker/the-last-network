@@ -1,7 +1,8 @@
 extends Node
 
-var last_node
+# Signals
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+signal enemy_died()
+
+# Variables
+var last_node

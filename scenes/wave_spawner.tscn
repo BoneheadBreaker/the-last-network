@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqmvef5d551rq"]
+
+[ext_resource type="Script" uid="uid://bkp8vlas1kb3r" path="res://scenes/wave_spawner.gd" id="1_ab10t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ab10t"]
+radius = 250.19992
+
+[node name="wave_spawner" type="Node2D"]
+script = ExtResource("1_ab10t")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="SpawnArea" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ab10t")
+
+[node name="InterwaveTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="InterwaveTimer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfkwfy12vtsou"]
+
+[ext_resource type="Script" uid="uid://bqukdtte516nt" path="res://scripts/lead_bullet.gd" id="1_yylms"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gsrhn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yylms"]
+size = Vector2(2, 8)
+
+[node name="lead_bullet" type="Area2D"]
+script = ExtResource("1_yylms")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.9802322e-08, -1.1920932e-07)
+rotation = 1.5707964
+scale = Vector2(2, 8)
+texture = SubResource("CanvasTexture_gsrhn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_yylms")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
