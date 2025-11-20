@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8yhy8pvwt33b"]
+[gd_scene load_steps=4 format=3 uid="uid://c8yhy8pvwt33b"]
+
+[ext_resource type="Script" uid="uid://du02skfat0cig" path="res://GUI/hud_handler.gd" id="1_15n47"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sfuq3"]
 font_size = 10
@@ -13,46 +15,35 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_15n47")
 
 [node name="Resources" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="MarginContainer" type="MarginContainer" parent="Resources"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Resources"]
 layout_mode = 0
 offset_left = 952.0
 offset_top = 573.0
 offset_right = 1152.0
-offset_bottom = 593.0
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 15
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Resources/MarginContainer"]
-layout_mode = 2
+offset_bottom = 627.0
 alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="Resources/MarginContainer/VBoxContainer"]
+[node name="ColorRect" type="ColorRect" parent="Resources/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.31764707, 0.73333335, 0.9490196, 1)
 
-[node name="Label" type="Label" parent="Resources/MarginContainer/VBoxContainer/ColorRect"]
-layout_mode = 0
-offset_top = 9.0
-offset_right = 190.0
-offset_bottom = 23.0
+[node name="Label" type="Label" parent="Resources/VBoxContainer"]
+layout_mode = 2
 text = "Packets"
 label_settings = SubResource("LabelSettings_sfuq3")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Resources/MarginContainer/VBoxContainer/ColorRect"]
-layout_mode = 0
-offset_right = 190.0
-offset_bottom = 32.0
+[node name="Packet_display" type="Label" parent="Resources/VBoxContainer"]
+layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_15n47")
 horizontal_alignment = 1

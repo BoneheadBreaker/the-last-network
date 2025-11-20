@@ -6,14 +6,24 @@ var dead_enemies = 0 # counts the dead enemies so we know when the wave ends
 var monster_dict = { # level is the key (or id, its the first number) amount of monsters is the value (second number)
 	1:1,
 	2:3,
-	3:5,
+	3:6,
 	4:10,
 	5:15,
 	6:20,
 	7:35,
 	8:40,
 	9:50,
-	10:53
+	10:53,
+	11:60,
+	12:75,
+	13:80,
+	14:100,
+	15:130,
+	16:160,
+	17:180,
+	18:190,
+	19:200,
+	20:210
 }
 
 @onready var glitchling = preload("res://scenes/enemies/glitchling.tscn")

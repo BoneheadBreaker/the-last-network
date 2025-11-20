@@ -1,60 +1,52 @@
 extends CharacterBody2D
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
 var health = 500
 
-@onready var nav : NavigationAgent2D = $NavigationAgent2D
+@onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
+
+# For stuck detection
+var last_pos = Vector2.ZERO
+var stuck_timer = 0.0
+var stuck_check_interval = 0.5
+var stuck_distance_threshold = 1.0
 
 func _ready():
-	actor_setup.call_deferred() # make sure the node is "ready"
-	nav.velocity_computed.connect(_velocity_computed) # connect so we can get the navs node velocity for avoidance (if enabled)
+	make_path()
 	add_to_group("Enemies")
-
-func actor_setup():
-	# Wait for the first physics frame so the NavigationServer can sync.
-	await get_tree().physics_frame
-
-	# Now that the navigation map is no longer empty, set the movement target.
-	set_movement_target(Vector2(789, 3987))
-	
-func set_movement_target(movement_target: Vector2):
-	nav.target_position = movement_target
+	last_pos = global_position
 
 func _physics_process(delta: float) -> void:
-	# Currently trying to add better movement
-	# position = position.move_toward(Globals.last_node.position, int(SPEED * delta))  # move toward the last exit node
-	# look_at(Globals.last_node.global_position)
-	
-	_move_towards_player()
-	# move_and_slide()
+	# Stuck detection
+	stuck_timer += delta
+	if stuck_timer >= stuck_check_interval:
+		if global_position.distance_to(last_pos) < stuck_distance_threshold:
+			# Enemy is likely stuck, force path recalculation
+			nav_agent.target_position = nav_agent.target_position
+		last_pos = global_position
+		stuck_timer = 0.0
 
-func _move_towards_player() -> void:
-	# Update the player position
-	set_movement_target(Vector2(789, 3987))
-
-	# If we're at the target, stop
-	if nav.is_navigation_finished():
+	# Stop moving if we reached the target
+	if nav_agent.is_navigation_finished():
+		velocity = Vector2.ZERO
+		move_and_slide()
 		return
 
-	# Get pathfinding information
-	var current_agent_position: Vector2 = global_position
-	var next_path_position: Vector2 = nav.get_next_path_position()
+	var next_pos = nav_agent.get_next_path_position()
+	var to_next = next_pos - global_position
+	var min_distance = 4.0
 
-	# Calculate the new velocity
-	var new_velocity = current_agent_position.direction_to(next_path_position) * SPEED
-
-	# Set correct velocity
-	if nav.avoidance_enabled:
-		nav.set_velocity(new_velocity)
+	if to_next.length() > min_distance:
+		var dir = to_next.normalized()
+		velocity = dir * SPEED
 	else:
-		_velocity_computed(new_velocity)
+		var dir = to_next.normalized()
+		velocity = dir * SPEED * (to_next.length() / min_distance)
 
-	# Do the movement
 	move_and_slide()
 
-func _velocity_computed(safe_velocity: Vector2):
-	velocity = safe_velocity
+func make_path():
+	nav_agent.target_position = get_node("/root/Main/World/LastNode").position
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Bullets"):
@@ -63,3 +55,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			Globals.emit_signal("enemy_died")
 			ResourceManager.add_packets(15)
 			queue_free()
+
+func _on_attack_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group("core"):
+		Globals.emit_signal("damage_last_node", 10)
