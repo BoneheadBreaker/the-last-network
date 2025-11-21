@@ -31,7 +31,6 @@ func shoot_timer(): # use this function because you cant use await in _process
 		fire()
 
 func _physics_process(delta: float) -> void:
-	
 	move_and_slide()
 
 
@@ -47,7 +46,6 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 func get_closest_body():
 	var closest_body = null
 	var closest_distance = INF # infinity
-	
 	for enemy in enemies_in_range:
 		var distence = global_position.distance_to(enemy.global_position)
 		if distence < closest_distance:

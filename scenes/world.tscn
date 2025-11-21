@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://balkmydrt4drd"]
+[gd_scene load_steps=51 format=4 uid="uid://balkmydrt4drd"]
 
 [ext_resource type="Script" uid="uid://dmqour2bwu4im" path="res://world.gd" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://c6sxsej53ngcw" path="res://assets/map-assets/basalt1.png" id="2_71j4m"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dl1e28gmcioyg" path="res://assets/map-assets/ferric-stone4.png" id="16_4kbfs"]
 [ext_resource type="Texture2D" uid="uid://day07ipnh5m72" path="res://assets/map-assets/metal-tiles-13-mid-2.png" id="17_f17e3"]
 [ext_resource type="Texture2D" uid="uid://d0ncdbtayv3we" path="res://assets/map-assets/empty.png" id="18_7iits"]
+[ext_resource type="Script" uid="uid://by8quxopd1yfy" path="res://scenes/world_edges.gd" id="23_kpybi"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_oo54l"]
 vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
@@ -159,6 +160,21 @@ scenes/1/scene = ExtResource("4_k0juu")
 tile_size = Vector2i(32, 32)
 sources/5 = SubResource("TileSetScenesCollectionSource_qfnet")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ctatt"]
+normal = Vector2(1, 0)
+distance = -761.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xgqkh"]
+distance = -1499.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_munwf"]
+normal = Vector2(0.0054445653, 0.99998516)
+distance = -771.0848
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ts3gi"]
+normal = Vector2(-1, 0)
+distance = -2959.0
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_nnsk1")
 
@@ -180,3 +196,20 @@ position = Vector2(1519, 754)
 
 [node name="wave_spawner" parent="." instance=ExtResource("6_qfnet")]
 position = Vector2(480, 190)
+
+[node name="WorldEdges" type="Area2D" parent="."]
+script = ExtResource("23_kpybi")
+
+[node name="LeftEdge" type="CollisionShape2D" parent="WorldEdges"]
+shape = SubResource("WorldBoundaryShape2D_ctatt")
+
+[node name="BottomEdge" type="CollisionShape2D" parent="WorldEdges"]
+shape = SubResource("WorldBoundaryShape2D_xgqkh")
+
+[node name="TopEdge" type="CollisionShape2D" parent="WorldEdges"]
+shape = SubResource("WorldBoundaryShape2D_munwf")
+
+[node name="RightEdge" type="CollisionShape2D" parent="WorldEdges"]
+shape = SubResource("WorldBoundaryShape2D_ts3gi")
+
+[connection signal="area_entered" from="WorldEdges" to="WorldEdges" method="_on_area_entered"]
