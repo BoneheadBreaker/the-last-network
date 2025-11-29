@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://br1wcnkookbyt"]
+
+[ext_resource type="Texture2D" uid="uid://c8oc5xckombmk" path="res://assets/The Last Network/png/map-assets/dune-wall1.png" id="1_xey75"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6t1q"]
+size = Vector2(32, 32)
+
+[node name="wall" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xey75")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_q6t1q")

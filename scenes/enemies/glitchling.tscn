@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://doafvi0pkfxmj"]
 
-[ext_resource type="Texture2D" uid="uid://2vtvppnteb5l" path="res://assets/avert.png" id="1_a163b"]
+[ext_resource type="Texture2D" uid="uid://2vtvppnteb5l" path="res://assets/The Last Network/png/enemies/avert.png" id="1_a163b"]
 [ext_resource type="Script" uid="uid://cp5jo8g7fouvo" path="res://scenes/enemies/glitchling.gd" id="1_fjvs1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjvs1"]

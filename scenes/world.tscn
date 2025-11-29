@@ -1,28 +1,29 @@
-[gd_scene load_steps=51 format=4 uid="uid://balkmydrt4drd"]
+[gd_scene load_steps=52 format=4 uid="uid://balkmydrt4drd"]
 
-[ext_resource type="Script" uid="uid://dmqour2bwu4im" path="res://world.gd" id="1_nnsk1"]
-[ext_resource type="Texture2D" uid="uid://c6sxsej53ngcw" path="res://assets/map-assets/basalt1.png" id="2_71j4m"]
+[ext_resource type="Script" uid="uid://dmins53dmgume" path="res://scenes/placement_manager.gd" id="1_kpybi"]
+[ext_resource type="Texture2D" uid="uid://c6sxsej53ngcw" path="res://assets/The Last Network/png/map-assets/basalt1.png" id="2_71j4m"]
 [ext_resource type="PackedScene" uid="uid://dcfq53ckow2a5" path="res://scenes/last_node.tscn" id="2_rwgxs"]
-[ext_resource type="Texture2D" uid="uid://bg3i6ynsjy81v" path="res://assets/map-assets/dirt1.png" id="3_7iits"]
-[ext_resource type="Script" uid="uid://dxtoiwxy6ds4s" path="res://scenes/collison_tilemap_layers.gd" id="3_oo54l"]
-[ext_resource type="PackedScene" uid="uid://76cc6gbxvkkk" path="res://scenes/turrets/simple_turret.tscn" id="4_k0juu"]
-[ext_resource type="Texture2D" uid="uid://du8kny8sweibm" path="res://assets/map-assets/dirt2.png" id="4_oo54l"]
-[ext_resource type="Texture2D" uid="uid://cpqd43qy06tkq" path="res://assets/map-assets/dirt3.png" id="5_kpybi"]
-[ext_resource type="Texture2D" uid="uid://c0byfdyx5vt4b" path="res://assets/map-assets/dirt-wall1.png" id="6_ctatt"]
+[ext_resource type="Texture2D" uid="uid://bg3i6ynsjy81v" path="res://assets/The Last Network/png/map-assets/dirt1.png" id="3_7iits"]
+[ext_resource type="PackedScene" uid="uid://br1wcnkookbyt" path="res://scenes/placeables/other/wall.tscn" id="3_ctatt"]
+[ext_resource type="Script" uid="uid://dxtoiwxy6ds4s" path="res://scripts/collison_tilemap_layers.gd" id="3_oo54l"]
+[ext_resource type="PackedScene" uid="uid://76cc6gbxvkkk" path="res://scenes/placeables/turrets/simple_turret.tscn" id="4_k0juu"]
+[ext_resource type="Texture2D" uid="uid://du8kny8sweibm" path="res://assets/The Last Network/png/map-assets/dirt2.png" id="4_oo54l"]
+[ext_resource type="Texture2D" uid="uid://cpqd43qy06tkq" path="res://assets/The Last Network/png/map-assets/dirt3.png" id="5_kpybi"]
+[ext_resource type="Texture2D" uid="uid://c0byfdyx5vt4b" path="res://assets/The Last Network/png/map-assets/dirt-wall1.png" id="6_ctatt"]
 [ext_resource type="PackedScene" uid="uid://dqmvef5d551rq" path="res://scenes/wave_spawner.tscn" id="6_qfnet"]
-[ext_resource type="Texture2D" uid="uid://cn7ociov4l721" path="res://assets/map-assets/dirt-wall2.png" id="7_xgqkh"]
-[ext_resource type="Texture2D" uid="uid://c8oc5xckombmk" path="res://assets/map-assets/dune-wall1.png" id="8_munwf"]
-[ext_resource type="Texture2D" uid="uid://2tmtkk44cvtn" path="res://assets/map-assets/dune-wall2.png" id="9_ts3gi"]
-[ext_resource type="Texture2D" uid="uid://bu8aoysf118yh" path="res://assets/map-assets/ferric-craters1.png" id="10_0nbtd"]
-[ext_resource type="Texture2D" uid="uid://c2vkjld3jyunv" path="res://assets/map-assets/ferric-craters2.png" id="11_37qwj"]
-[ext_resource type="Texture2D" uid="uid://dm2jq67dlyrg3" path="res://assets/map-assets/ferric-craters3.png" id="12_navra"]
-[ext_resource type="Texture2D" uid="uid://cvr736iqkyhcp" path="res://assets/map-assets/ferric-stone1.png" id="13_luhhm"]
-[ext_resource type="Texture2D" uid="uid://do7hgubgqvrkl" path="res://assets/map-assets/ferric-stone2.png" id="14_fh13f"]
-[ext_resource type="Texture2D" uid="uid://dpxkk8ft63364" path="res://assets/map-assets/ferric-stone3.png" id="15_rup4s"]
-[ext_resource type="Texture2D" uid="uid://dl1e28gmcioyg" path="res://assets/map-assets/ferric-stone4.png" id="16_4kbfs"]
-[ext_resource type="Texture2D" uid="uid://day07ipnh5m72" path="res://assets/map-assets/metal-tiles-13-mid-2.png" id="17_f17e3"]
-[ext_resource type="Texture2D" uid="uid://d0ncdbtayv3we" path="res://assets/map-assets/empty.png" id="18_7iits"]
-[ext_resource type="Script" uid="uid://by8quxopd1yfy" path="res://scenes/world_edges.gd" id="23_kpybi"]
+[ext_resource type="Texture2D" uid="uid://cn7ociov4l721" path="res://assets/The Last Network/png/map-assets/dirt-wall2.png" id="7_xgqkh"]
+[ext_resource type="Texture2D" uid="uid://c8oc5xckombmk" path="res://assets/The Last Network/png/map-assets/dune-wall1.png" id="8_munwf"]
+[ext_resource type="Texture2D" uid="uid://2tmtkk44cvtn" path="res://assets/The Last Network/png/map-assets/dune-wall2.png" id="9_ts3gi"]
+[ext_resource type="Texture2D" uid="uid://bu8aoysf118yh" path="res://assets/The Last Network/png/map-assets/ferric-craters1.png" id="10_0nbtd"]
+[ext_resource type="Texture2D" uid="uid://c2vkjld3jyunv" path="res://assets/The Last Network/png/map-assets/ferric-craters2.png" id="11_37qwj"]
+[ext_resource type="Texture2D" uid="uid://dm2jq67dlyrg3" path="res://assets/The Last Network/png/map-assets/ferric-craters3.png" id="12_navra"]
+[ext_resource type="Texture2D" uid="uid://cvr736iqkyhcp" path="res://assets/The Last Network/png/map-assets/ferric-stone1.png" id="13_luhhm"]
+[ext_resource type="Texture2D" uid="uid://do7hgubgqvrkl" path="res://assets/The Last Network/png/map-assets/ferric-stone2.png" id="14_fh13f"]
+[ext_resource type="Texture2D" uid="uid://dpxkk8ft63364" path="res://assets/The Last Network/png/map-assets/ferric-stone3.png" id="15_rup4s"]
+[ext_resource type="Texture2D" uid="uid://dl1e28gmcioyg" path="res://assets/The Last Network/png/map-assets/ferric-stone4.png" id="16_4kbfs"]
+[ext_resource type="Texture2D" uid="uid://day07ipnh5m72" path="res://assets/The Last Network/png/map-assets/metal-tiles-13-mid-2.png" id="17_f17e3"]
+[ext_resource type="Texture2D" uid="uid://d0ncdbtayv3we" path="res://assets/The Last Network/png/map-assets/empty.png" id="18_7iits"]
+[ext_resource type="Script" uid="uid://by8quxopd1yfy" path="res://scripts/world_edges.gd" id="23_kpybi"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_oo54l"]
 vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
@@ -155,6 +156,7 @@ sources/32 = SubResource("TileSetAtlasSource_oo54l")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_qfnet"]
 scenes/1/scene = ExtResource("4_k0juu")
+scenes/2/scene = ExtResource("3_ctatt")
 
 [sub_resource type="TileSet" id="TileSet_k0juu"]
 tile_size = Vector2i(32, 32)
@@ -176,7 +178,9 @@ normal = Vector2(-1, 0)
 distance = -2959.0
 
 [node name="World" type="Node2D"]
-script = ExtResource("1_nnsk1")
+script = ExtResource("1_kpybi")
+simple_tower = ExtResource("4_k0juu")
+wall = ExtResource("3_ctatt")
 
 [node name="Floor" type="TileMapLayer" parent="." groups=["obstacles"]]
 z_index = -5

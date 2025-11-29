@@ -10,6 +10,9 @@ func _ready() -> void:
 func take_damage(amount):
 	health -= amount
 	print("Health:", health)
+	if health <= 0:
+		Globals.emit_signal("core_died")
+		print("exit node died..... GAME OVER")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
