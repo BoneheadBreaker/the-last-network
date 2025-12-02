@@ -5,12 +5,7 @@ extends Node2D
 @export var simple_tower: PackedScene
 @export var wall : PackedScene
 
-# Tracks which grid cells are occupied
-var occupied_cells := {}
-
-	# for later to use in other scripts
-	# ResourceManager.connect("resources_changed", Callable(self, "_test"))
-	# ResourceManager.add_packets(267)
+@onready var PathTester = $PathTester
 
 func _ready():
 	Globals.connect("new_item_selected", Callable(self, "_item_selected"))
@@ -18,38 +13,88 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("place_tower"):
 		if Globals.mouse_over_HUD == false:
-			if ResourceManager.Packets >= 50:
-				ResourceManager.remove_packets(50)
-				var mouse_pos = get_global_mouse_position()
-				place_tower(mouse_pos, Globals.current_selection)
-				add_buffer(mouse_pos)
-			else:
-				print("Not enough money")
+			if Globals.current_selection == Globals.build_options.WALL:
+				if ResourceManager.Packets >= 15:
+					ResourceManager.remove_packets(15)
+					var mouse_pos = get_global_mouse_position()
+					place_tower(mouse_pos, Globals.current_selection)
+			else:		
+				if ResourceManager.Packets >= 50:
+					ResourceManager.remove_packets(50)
+					var mouse_pos = get_global_mouse_position()
+					place_tower(mouse_pos, Globals.current_selection)
+				else:
+					print("Not enough money")
 
-# Helper to create unique keys for occupied_cells dictionary
-func _cell_key(cell: Vector2i) -> String:
-	return str(cell.x) + "," + str(cell.y)
+func would_block_path(world_mouse_pos, tile_coords): # test if enemy navigation can work after adding this tile
+	var agent = $PathTester.get_node("NavigationAgent2D")
+	
+	$PathfindingTestFloor.set_cell(tile_coords, 5, Vector2i(0, 0), Globals.current_selection)
+	add_buffer(world_mouse_pos, $Floor)
+	
+	PathTester.get_node("NavigationAgent2D").target_position = Globals.last_node.position
+	$PathfindingTestFloor.notify_runtime_tile_data_update()
+	
+	# Give some frames to update the navigation
+	for i in range(5):
+		await get_tree().process_frame
+	
+	if agent.is_target_reachable():
+		print("reachable OR IS IT")
+	else:
+		print("not reachable OR IS IT")
+	
+	if agent.is_target_reachable():
+		print("reachable")
+		return false
+	else:
+		print("not reachable")
+		return true
+		
 
-func add_buffer(world_mouse_pos: Vector2): # adds a buffer around a certain tile so that enemy navigation works properly
-	var mouse_local_pos = $Floor.to_local(world_mouse_pos)
-	var tile_coords = $Floor.local_to_map(mouse_local_pos)
+func add_buffer(world_mouse_pos: Vector2, tilemap): # adds a buffer around a certain tile so that enemy navigation works properly
+	var mouse_local_pos = tilemap.to_local(world_mouse_pos)
+	var tile_coords = tilemap.local_to_map(mouse_local_pos)
 	
 	# TOP
 	var tile_coords_top = Vector2i(tile_coords.x, tile_coords.y - 1)
-	$Floor.set_cell(tile_coords_top)
+	tilemap.set_cell(tile_coords_top)
 	# DOWN
 	var tile_coords_bottom = Vector2i(tile_coords.x, tile_coords.y + 1)
-	$Floor.set_cell(tile_coords_bottom)
+	tilemap.set_cell(tile_coords_bottom)
 	# LEFT
 	var tile_coords_left = Vector2i(tile_coords.x - 1, tile_coords.y)
-	$Floor.set_cell(tile_coords_left)
+	tilemap.set_cell(tile_coords_left)
 	# RIGHT
 	var tile_coords_right = Vector2i(tile_coords.x + 1, tile_coords.y)
-	$Floor.set_cell(tile_coords_right)
+	tilemap.set_cell(tile_coords_right)
 	# UNDERNEATH
-	$Floor.set_cell(tile_coords) # set it to air
+	tilemap.set_cell(tile_coords) # set it to air
+	
+	tilemap.notify_runtime_tile_data_update()
 	
 	print("Tile coords: " + str(tile_coords.x) + str(tile_coords.y))
+
+func remove_buffer(world_mouse_pos: Vector2, tilemap):
+	var mouse_local_pos = tilemap.to_local(world_mouse_pos)
+	var tile_coords = tilemap.local_to_map(mouse_local_pos)
+	
+	# TOP
+	var tile_coords_top = Vector2i(tile_coords.x, tile_coords.y - 1)
+	tilemap.set_cell(tile_coords_top, -1)
+	# DOWN
+	var tile_coords_bottom = Vector2i(tile_coords.x, tile_coords.y + 1)
+	tilemap.set_cell(tile_coords_bottom, -1)
+	# LEFT
+	var tile_coords_left = Vector2i(tile_coords.x - 1, tile_coords.y)
+	tilemap.set_cell(tile_coords_left, -1)
+	# RIGHT
+	var tile_coords_right = Vector2i(tile_coords.x + 1, tile_coords.y)
+	tilemap.set_cell(tile_coords_right, -1)
+	# UNDERNEATH
+	tilemap.set_cell(tile_coords, -1) # set it to air
+	
+	tilemap.notify_runtime_tile_data_update()
 
 func _item_selected(selected_item):
 	Globals.current_selection = selected_item
@@ -58,8 +103,18 @@ func _item_selected(selected_item):
 func place_tower(world_mouse_pos: Vector2, tower):
 	var mouse_local_pos = $BuildingLayer.to_local(world_mouse_pos)
 	var tile_coords = $BuildingLayer.local_to_map(mouse_local_pos)
+	var result = await would_block_path(world_mouse_pos, tile_coords)
+	
+	if result == true:
+		$PathfindingTestFloor.set_cell(tile_coords, 5, Vector2i(0, 0), Globals.current_selection)
+		remove_buffer(world_mouse_pos, $Floor)
+		
+		return -1
+	
+		
 	print("Source id: " + str($BuildingLayer.get_cell_source_id(tile_coords)))
 	$BuildingLayer.set_cell(tile_coords, 5, Vector2i(0, 0), Globals.current_selection) # tile coords, source id, atlas coords, alternative tile
+	add_buffer(world_mouse_pos, $Floor)
 	
 	print("Source id: " + str($BuildingLayer.get_cell_source_id(tile_coords)))
 	print("global mouse pos: " + str(world_mouse_pos))

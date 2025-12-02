@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func make_path():
-	nav_agent.target_position = get_node("/root/Main/World/LastNode").position
+	nav_agent.target_position = Globals.last_node.position
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Bullets"):

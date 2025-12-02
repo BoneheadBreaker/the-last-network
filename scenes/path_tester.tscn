@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://12xjledro8ae"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tukwn"]
+radius = 41.303753
+
+[node name="PathTester" type="CharacterBody2D"]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 239.33
+avoidance_enabled = true
+avoidance_layers = 2
+avoidance_mask = 2
+debug_enabled = true
+debug_path_custom_color = Color(0, 0.45925826, 0.9817087, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 71.0
+offset_bottom = 65.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(36, 33)
+shape = SubResource("CircleShape2D_tukwn")
