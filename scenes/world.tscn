@@ -58,7 +58,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_e68xj"]
 tile_size = Vector2i(32, 32)
-navigation_layer_0/layers = 2
+navigation_layer_0/layers = 7
 sources/0 = SubResource("TileSetAtlasSource_0nbtd")
 sources/3 = SubResource("TileSetAtlasSource_37qwj")
 
@@ -75,7 +75,7 @@ texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
 2:1/0 = 0
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_oo54l"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_37qwj"]
 vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)])
@@ -85,11 +85,11 @@ agent_radius = 0.0
 texture = ExtResource("2_71j4m")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
-0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_oo54l")
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_37qwj")
 
 [sub_resource type="TileSet" id="TileSet_rup4s"]
 tile_size = Vector2i(32, 32)
-navigation_layer_0/layers = 1
+navigation_layer_0/layers = 7
 sources/4 = SubResource("TileSetAtlasSource_fh13f")
 sources/0 = SubResource("TileSetAtlasSource_luhhm")
 

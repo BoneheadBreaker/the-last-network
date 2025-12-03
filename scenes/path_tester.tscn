@@ -6,10 +6,10 @@ radius = 41.303753
 [node name="PathTester" type="CharacterBody2D"]
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-target_desired_distance = 239.33
+target_desired_distance = 39.95
 avoidance_enabled = true
-avoidance_layers = 2
-avoidance_mask = 2
+avoidance_layers = 7
+avoidance_mask = 7
 debug_enabled = true
 debug_path_custom_color = Color(0, 0.45925826, 0.9817087, 1)
 
