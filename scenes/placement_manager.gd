@@ -12,8 +12,8 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_pressed("place_tower"):
-		if Globals.mouse_over_HUD == false:
-			if Globals.current_selection == Globals.build_options.WALL:
+		if Globals.mouse_over_HUD == false: # if the mouse is NOT over any HUD
+			if Globals.current_selection == Globals.build_options.WALL: # If they are trying to build a wall (if a wall is the selected thing)
 				if ResourceManager.Packets >= 15:
 					ResourceManager.remove_packets(15)
 					var mouse_pos = get_global_mouse_position()
@@ -29,11 +29,11 @@ func _process(delta):
 func would_block_path(world_mouse_pos, tile_coords): # test if enemy navigation can work after adding this tile
 	var agent = $PathTester.get_node("NavigationAgent2D")
 	
-	$PathfindingTestFloor.set_cell(tile_coords, 5, Vector2i(0, 0), Globals.current_selection)
-	add_buffer(world_mouse_pos, $PathfindingTestFloor)
+	$Floor.set_cell(tile_coords, 5, Vector2i(0, 0), Globals.current_selection)
+	add_buffer(world_mouse_pos, $Floor)
 	
 	agent.target_position = Globals.last_node.position
-	$PathfindingTestFloor.notify_runtime_tile_data_update()
+	$Floor.notify_runtime_tile_data_update()
 	
 	# Give some frames to update the navigation
 	await get_tree().process_frame
@@ -49,7 +49,7 @@ func would_block_path(world_mouse_pos, tile_coords): # test if enemy navigation 
 	await get_tree().process_frame
 	
 	agent.target_position = Globals.last_node.position
-	$PathfindingTestFloor.notify_runtime_tile_data_update()
+	$Floor.notify_runtime_tile_data_update()
 
 	await get_tree().process_frame
 	await get_tree().process_frame
@@ -69,7 +69,7 @@ func would_block_path(world_mouse_pos, tile_coords): # test if enemy navigation 
 		return false
 	else:
 		print("not reachable")
-		remove_buffer(world_mouse_pos, $PathfindingTestFloor)
+		remove_buffer(world_mouse_pos, $Floor)
 		return true
 		
 
@@ -103,18 +103,18 @@ func remove_buffer(world_mouse_pos: Vector2i, tilemap):
 	# set all sides to the ground
 	# TOP
 	var tile_coords_top = Vector2i(tile_coords.x, tile_coords.y - 1)
-	tilemap.set_cell(tile_coords_top, 3)
+	tilemap.set_cell(tile_coords_top, 4, Vector2i(0, 0))
 	# DOWN
 	var tile_coords_bottom = Vector2i(tile_coords.x, tile_coords.y + 1)
-	tilemap.set_cell(tile_coords_bottom, 3)
+	tilemap.set_cell(tile_coords_bottom, 4, Vector2i(0, 0))
 	# LEFT
 	var tile_coords_left = Vector2i(tile_coords.x - 1, tile_coords.y)
-	tilemap.set_cell(tile_coords_left, 3)
+	tilemap.set_cell(tile_coords_left, 4, Vector2i(0, 0))
 	# RIGHT
 	var tile_coords_right = Vector2i(tile_coords.x + 1, tile_coords.y)
-	tilemap.set_cell(tile_coords_right, 3)
+	tilemap.set_cell(tile_coords_right, 4, Vector2i(0, 0))
 	# UNDERNEATH
-	tilemap.set_cell(tile_coords, 3)
+	tilemap.set_cell(tile_coords, 4, Vector2i(0, 0))
 	print(tilemap)
 	tilemap.notify_runtime_tile_data_update()
 
@@ -128,8 +128,8 @@ func place_tower(world_mouse_pos: Vector2, tower):
 	var result = await would_block_path(world_mouse_pos, tile_coords)
 	
 	if result == true:
-		$PathfindingTestFloor.set_cell(tile_coords, 5, Vector2i(0, 0), Globals.current_selection)
-		remove_buffer(world_mouse_pos, $PathfindingTestFloor)
+		$Floor.set_cell(tile_coords, 5, Vector2i(0, 0), Globals.current_selection)
+		remove_buffer(world_mouse_pos, $Floor)
 		print("a")
 		return -1
 		
