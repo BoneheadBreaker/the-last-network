@@ -1,6 +1,6 @@
 [gd_scene load_steps=56 format=4 uid="uid://balkmydrt4drd"]
 
-[ext_resource type="Script" uid="uid://dmins53dmgume" path="res://scenes/placement_manager.gd" id="1_kpybi"]
+[ext_resource type="Script" uid="uid://dmins53dmgume" path="res://scripts/placement_manager.gd" id="1_kpybi"]
 [ext_resource type="Texture2D" uid="uid://c6sxsej53ngcw" path="res://assets/The Last Network/png/map-assets/basalt1.png" id="2_71j4m"]
 [ext_resource type="PackedScene" uid="uid://dcfq53ckow2a5" path="res://scenes/last_node.tscn" id="2_rwgxs"]
 [ext_resource type="Texture2D" uid="uid://bg3i6ynsjy81v" path="res://assets/The Last Network/png/map-assets/dirt1.png" id="3_7iits"]
