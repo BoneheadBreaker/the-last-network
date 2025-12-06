@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvr736iqkyhcp"
-path="res://.godot/imported/ferric-stone1.png-0ed67597e53ac1f97e5bb971edd6cb5c.ctex"
+uid="uid://2tmtkk44cvtn"
+path="res://.godot/imported/dune-wall2.png-5ae27cceb2dd7faba17f29e72d57a555.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/The Last Network/png/map-assets/ferric-stone1.png"
-dest_files=["res://.godot/imported/ferric-stone1.png-0ed67597e53ac1f97e5bb971edd6cb5c.ctex"]
+source_file="res://assets/map-assets/dune-wall2.png"
+dest_files=["res://.godot/imported/dune-wall2.png-5ae27cceb2dd7faba17f29e72d57a555.ctex"]
 
 [params]
 

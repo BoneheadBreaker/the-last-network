@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6sxsej53ngcw"
-path="res://.godot/imported/basalt1.png-8913ea3a7a43a4f4782ad2a24000bbd7.ctex"
+uid="uid://dl1e28gmcioyg"
+path="res://.godot/imported/ferric-stone4.png-a8a0bdb1b0213398cd28ad1eaf5c37b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/The Last Network/png/map-assets/basalt1.png"
-dest_files=["res://.godot/imported/basalt1.png-8913ea3a7a43a4f4782ad2a24000bbd7.ctex"]
+source_file="res://assets/map-assets/ferric-stone4.png"
+dest_files=["res://.godot/imported/ferric-stone4.png-a8a0bdb1b0213398cd28ad1eaf5c37b5.ctex"]
 
 [params]
 

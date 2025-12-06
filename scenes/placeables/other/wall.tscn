@@ -1,6 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://br1wcnkookbyt"]
 
-[ext_resource type="Texture2D" uid="uid://c8oc5xckombmk" path="res://assets/The Last Network/png/map-assets/dune-wall1.png" id="1_xey75"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xo05s"]
+load_path = "res://.godot/imported/dune-wall1.png-846143a310b6930f90af2da5aeff62f7.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6t1q"]
 size = Vector2(32, 32)
@@ -8,7 +9,7 @@ size = Vector2(32, 32)
 [node name="wall" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_xey75")
+texture = SubResource("CompressedTexture2D_xo05s")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

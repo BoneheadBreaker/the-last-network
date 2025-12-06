@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm2jq67dlyrg3"
-path="res://.godot/imported/ferric-craters3.png-92f03e343ca60cfa1f92614b0996c278.ctex"
+uid="uid://c8oc5xckombmk"
+path="res://.godot/imported/dune-wall1.png-16e674ddba72af8f10017ac0dd6f654c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/The Last Network/png/map-assets/ferric-craters3.png"
-dest_files=["res://.godot/imported/ferric-craters3.png-92f03e343ca60cfa1f92614b0996c278.ctex"]
+source_file="res://assets/map-assets/dune-wall1.png"
+dest_files=["res://.godot/imported/dune-wall1.png-16e674ddba72af8f10017ac0dd6f654c.ctex"]
 
 [params]
 

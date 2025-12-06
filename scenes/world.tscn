@@ -1,36 +1,21 @@
 [gd_scene load_steps=56 format=4 uid="uid://balkmydrt4drd"]
 
 [ext_resource type="Script" uid="uid://dmins53dmgume" path="res://scripts/placement_manager.gd" id="1_kpybi"]
-[ext_resource type="Texture2D" uid="uid://c6sxsej53ngcw" path="res://assets/The Last Network/png/map-assets/basalt1.png" id="2_71j4m"]
 [ext_resource type="PackedScene" uid="uid://dcfq53ckow2a5" path="res://scenes/last_node.tscn" id="2_rwgxs"]
-[ext_resource type="Texture2D" uid="uid://bg3i6ynsjy81v" path="res://assets/The Last Network/png/map-assets/dirt1.png" id="3_7iits"]
 [ext_resource type="PackedScene" uid="uid://br1wcnkookbyt" path="res://scenes/placeables/other/wall.tscn" id="3_ctatt"]
 [ext_resource type="Script" uid="uid://dxtoiwxy6ds4s" path="res://scripts/collison_tilemap_layers.gd" id="3_oo54l"]
 [ext_resource type="PackedScene" uid="uid://76cc6gbxvkkk" path="res://scenes/placeables/turrets/simple_turret.tscn" id="4_k0juu"]
-[ext_resource type="Texture2D" uid="uid://du8kny8sweibm" path="res://assets/The Last Network/png/map-assets/dirt2.png" id="4_oo54l"]
 [ext_resource type="PackedScene" uid="uid://12xjledro8ae" path="res://scenes/path_tester.tscn" id="4_xgqkh"]
-[ext_resource type="Texture2D" uid="uid://cpqd43qy06tkq" path="res://assets/The Last Network/png/map-assets/dirt3.png" id="5_kpybi"]
-[ext_resource type="Texture2D" uid="uid://b8fbjo863t0b6" path="res://assets/The Last Network/png/MapTileSet.png" id="5_munwf"]
-[ext_resource type="Texture2D" uid="uid://c0byfdyx5vt4b" path="res://assets/The Last Network/png/map-assets/dirt-wall1.png" id="6_ctatt"]
 [ext_resource type="PackedScene" uid="uid://dqmvef5d551rq" path="res://scenes/wave_spawner.tscn" id="6_qfnet"]
-[ext_resource type="Texture2D" uid="uid://cn7ociov4l721" path="res://assets/The Last Network/png/map-assets/dirt-wall2.png" id="7_xgqkh"]
-[ext_resource type="Texture2D" uid="uid://c8oc5xckombmk" path="res://assets/The Last Network/png/map-assets/dune-wall1.png" id="8_munwf"]
-[ext_resource type="Texture2D" uid="uid://2tmtkk44cvtn" path="res://assets/The Last Network/png/map-assets/dune-wall2.png" id="9_ts3gi"]
-[ext_resource type="Texture2D" uid="uid://bu8aoysf118yh" path="res://assets/The Last Network/png/map-assets/ferric-craters1.png" id="10_0nbtd"]
-[ext_resource type="Texture2D" uid="uid://c2vkjld3jyunv" path="res://assets/The Last Network/png/map-assets/ferric-craters2.png" id="11_37qwj"]
-[ext_resource type="Texture2D" uid="uid://dm2jq67dlyrg3" path="res://assets/The Last Network/png/map-assets/ferric-craters3.png" id="12_navra"]
-[ext_resource type="Texture2D" uid="uid://cvr736iqkyhcp" path="res://assets/The Last Network/png/map-assets/ferric-stone1.png" id="13_luhhm"]
-[ext_resource type="Texture2D" uid="uid://do7hgubgqvrkl" path="res://assets/The Last Network/png/map-assets/ferric-stone2.png" id="14_fh13f"]
-[ext_resource type="Texture2D" uid="uid://dpxkk8ft63364" path="res://assets/The Last Network/png/map-assets/ferric-stone3.png" id="15_rup4s"]
-[ext_resource type="Texture2D" uid="uid://dl1e28gmcioyg" path="res://assets/The Last Network/png/map-assets/ferric-stone4.png" id="16_4kbfs"]
-[ext_resource type="Texture2D" uid="uid://day07ipnh5m72" path="res://assets/The Last Network/png/map-assets/metal-tiles-13-mid-2.png" id="17_f17e3"]
-[ext_resource type="Texture2D" uid="uid://d0ncdbtayv3we" path="res://assets/The Last Network/png/map-assets/empty.png" id="18_7iits"]
 [ext_resource type="Script" uid="uid://by8quxopd1yfy" path="res://scripts/world_edges.gd" id="23_kpybi"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ts3gi"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4mrxx"]
+load_path = "res://.godot/imported/MapTileSet.png-2bbeea896a2743a6c73069ad84ea5e2c.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_luhhm"]
-texture = ExtResource("5_munwf")
+texture = SubResource("CompressedTexture2D_4mrxx")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ts3gi")
@@ -46,8 +31,11 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)])
 agent_radius = 0.0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7r4gi"]
+load_path = "res://.godot/imported/basalt1.png-8913ea3a7a43a4f4782ad2a24000bbd7.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fh13f"]
-texture = ExtResource("2_71j4m")
+texture = SubResource("CompressedTexture2D_7r4gi")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_37qwj")
@@ -59,92 +47,140 @@ sources/4 = SubResource("TileSetAtlasSource_fh13f")
 sources/0 = SubResource("TileSetAtlasSource_luhhm")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x2olw"]
-texture = ExtResource("2_71j4m")
+texture = SubResource("CompressedTexture2D_7r4gi")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w7kh3"]
+load_path = "res://.godot/imported/dirt1.png-5fca9dda28b83d99e9a9b3ebb1e0e113.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_817gm"]
-texture = ExtResource("3_7iits")
+texture = SubResource("CompressedTexture2D_w7kh3")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_e3hyu"]
+load_path = "res://.godot/imported/dirt2.png-ce3b4493fecf953926d0a21d36485507.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ggc52"]
-texture = ExtResource("4_oo54l")
+texture = SubResource("CompressedTexture2D_e3hyu")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q5onr"]
+load_path = "res://.godot/imported/dirt3.png-cc16f48b2199fcb187e18af3a26c7741.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l8ah6"]
-texture = ExtResource("5_kpybi")
+texture = SubResource("CompressedTexture2D_q5onr")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jhx03"]
+load_path = "res://.godot/imported/dirt-wall1.png-2ac732b1f99981c5671970b57de0a44c.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e75v4"]
-texture = ExtResource("6_ctatt")
+texture = SubResource("CompressedTexture2D_jhx03")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o8fc1"]
+load_path = "res://.godot/imported/dirt-wall2.png-55a33149e91e334c45ef70c8e1447cbd.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8u370"]
-texture = ExtResource("7_xgqkh")
+texture = SubResource("CompressedTexture2D_o8fc1")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xo05s"]
+load_path = "res://.godot/imported/dune-wall1.png-846143a310b6930f90af2da5aeff62f7.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rga7q"]
-texture = ExtResource("8_munwf")
+texture = SubResource("CompressedTexture2D_xo05s")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dss4m"]
+load_path = "res://.godot/imported/dune-wall2.png-6a306e522a1c94882b8003a57c734141.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6oujy"]
-texture = ExtResource("9_ts3gi")
+texture = SubResource("CompressedTexture2D_dss4m")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7t5mc"]
+load_path = "res://.godot/imported/ferric-craters1.png-b08cb01a899f8aebb4624ef1b2438152.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hi6a0"]
-texture = ExtResource("10_0nbtd")
+texture = SubResource("CompressedTexture2D_7t5mc")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lakw3"]
+load_path = "res://.godot/imported/ferric-craters2.png-f1c6686a32b73703ba9e0b7763953287.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eo1xk"]
-texture = ExtResource("11_37qwj")
+texture = SubResource("CompressedTexture2D_lakw3")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pm21f"]
+load_path = "res://.godot/imported/ferric-craters3.png-92f03e343ca60cfa1f92614b0996c278.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_18clu"]
-texture = ExtResource("12_navra")
+texture = SubResource("CompressedTexture2D_pm21f")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2lf6f"]
+load_path = "res://.godot/imported/ferric-stone1.png-0ed67597e53ac1f97e5bb971edd6cb5c.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wdv8"]
-texture = ExtResource("13_luhhm")
+texture = SubResource("CompressedTexture2D_2lf6f")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7iits"]
+load_path = "res://.godot/imported/ferric-stone2.png-7762edde93589acc5ff68fd3f2699b6a.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d46x8"]
-texture = ExtResource("14_fh13f")
+texture = SubResource("CompressedTexture2D_7iits")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oo54l"]
+load_path = "res://.godot/imported/ferric-stone3.png-07bb046b1c4851df1ffc488f643b521f.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3l05q"]
-texture = ExtResource("15_rup4s")
+texture = SubResource("CompressedTexture2D_oo54l")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kpybi"]
+load_path = "res://.godot/imported/ferric-stone4.png-b4dd4f715d4ca5f21bbc345d38afa4b2.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x28ej"]
-texture = ExtResource("16_4kbfs")
+texture = SubResource("CompressedTexture2D_kpybi")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ctatt"]
+load_path = "res://.godot/imported/metal-tiles-13-mid-2.png-7bff98c6b027f10b627fab070e316948.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1jxku"]
-texture = ExtResource("17_f17e3")
+texture = SubResource("CompressedTexture2D_ctatt")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xgqkh"]
+load_path = "res://.godot/imported/empty.png-9dc30e11550c035f862c3bda6b5a07ba.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oo54l"]
-texture = ExtResource("18_7iits")
+texture = SubResource("CompressedTexture2D_xgqkh")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 

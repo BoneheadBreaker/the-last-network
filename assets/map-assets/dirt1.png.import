@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://day07ipnh5m72"
-path="res://.godot/imported/metal-tiles-13-mid-2.png-7bff98c6b027f10b627fab070e316948.ctex"
+uid="uid://bg3i6ynsjy81v"
+path="res://.godot/imported/dirt1.png-ff9cffb80ea900c8fced8af7812dee03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/The Last Network/png/map-assets/metal-tiles-13-mid-2.png"
-dest_files=["res://.godot/imported/metal-tiles-13-mid-2.png-7bff98c6b027f10b627fab070e316948.ctex"]
+source_file="res://assets/map-assets/dirt1.png"
+dest_files=["res://.godot/imported/dirt1.png-ff9cffb80ea900c8fced8af7812dee03.ctex"]
 
 [params]
 

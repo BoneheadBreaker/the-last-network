@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpqd43qy06tkq"
-path="res://.godot/imported/dirt3.png-cc16f48b2199fcb187e18af3a26c7741.ctex"
+path="res://.godot/imported/dirt3.png-d59b2abf1500a424e423b98e2cba26e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/The Last Network/png/map-assets/dirt3.png"
-dest_files=["res://.godot/imported/dirt3.png-cc16f48b2199fcb187e18af3a26c7741.ctex"]
+source_file="res://assets/map-assets/dirt3.png"
+dest_files=["res://.godot/imported/dirt3.png-d59b2abf1500a424e423b98e2cba26e7.ctex"]
 
 [params]
 
