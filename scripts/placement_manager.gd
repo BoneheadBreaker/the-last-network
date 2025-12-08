@@ -103,18 +103,18 @@ func remove_buffer(world_mouse_pos: Vector2i, tilemap):
 	# set all sides to the ground
 	# TOP
 	var tile_coords_top = Vector2i(tile_coords.x, tile_coords.y - 1)
-	tilemap.set_cell(tile_coords_top, 4, Vector2i(0, 0))
+	tilemap.set_cell(tile_coords_top, 1, Vector2i(0, 0))
 	# DOWN
 	var tile_coords_bottom = Vector2i(tile_coords.x, tile_coords.y + 1)
-	tilemap.set_cell(tile_coords_bottom, 4, Vector2i(0, 0))
+	tilemap.set_cell(tile_coords_bottom, 1, Vector2i(0, 0))
 	# LEFT
 	var tile_coords_left = Vector2i(tile_coords.x - 1, tile_coords.y)
-	tilemap.set_cell(tile_coords_left, 4, Vector2i(0, 0))
+	tilemap.set_cell(tile_coords_left, 1, Vector2i(0, 0))
 	# RIGHT
 	var tile_coords_right = Vector2i(tile_coords.x + 1, tile_coords.y)
-	tilemap.set_cell(tile_coords_right, 4, Vector2i(0, 0))
+	tilemap.set_cell(tile_coords_right, 1, Vector2i(0, 0))
 	# UNDERNEATH
-	tilemap.set_cell(tile_coords, 4, Vector2i(0, 0))
+	tilemap.set_cell(tile_coords, 1, Vector2i(0, 0))
 	print(tilemap)
 	tilemap.notify_runtime_tile_data_update()
 
