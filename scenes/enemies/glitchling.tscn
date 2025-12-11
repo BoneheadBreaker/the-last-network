@@ -1,16 +1,16 @@
 [gd_scene load_steps=6 format=3 uid="uid://doafvi0pkfxmj"]
 
-[ext_resource type="Texture2D" uid="uid://2vtvppnteb5l" path="res://assets/The Last Network/png/enemies/avert.png" id="1_a163b"]
 [ext_resource type="Script" uid="uid://cp5jo8g7fouvo" path="res://scripts/glitchling.gd" id="1_fjvs1"]
+[ext_resource type="Texture2D" uid="uid://cdfxlgrqgeaf4" path="res://assets/The Last Network/png/enemies/Simple_enemy.png" id="2_fjvs1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjvs1"]
-size = Vector2(39, 41)
+size = Vector2(22, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31yfd"]
-size = Vector2(39, 41)
+size = Vector2(35, 37)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fjvs1"]
-radius = 63.007935
+radius = 46.043457
 
 [node name="Glitchling" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_fjvs1")
@@ -18,10 +18,10 @@ script = ExtResource("1_fjvs1")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5707964
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_a163b")
+texture = ExtResource("2_fjvs1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -0.5)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_fjvs1")
 
 [node name="HurtArea" type="Area2D" parent="."]
