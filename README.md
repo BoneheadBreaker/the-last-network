@@ -12,3 +12,20 @@ once the game is developed more I plan on having beta builds which will be purel
 The future of The Last Network is not 100% defined I hope to add hints at lore/the games story aswell as polish it but I may take a break from the project after the Minimum viable product is released to start work on a new project before updating it.
 
 Either way I have more planned after The minimum viable product but it may be only be implemented a month or two after, or maybe more im currently unsure as when or if it will be implemented
+
+# RoadMap
+
+this is a smaller version of the roadmap for the game including a little more of whats next and a little of what was just done
+this might change things get removed other things get added etc
+
+things with a ? are especially still in thinking (but even things without are not final)
+
+Minimum Viable product ✔️
+Post MVP
+  Blance changes
+  Main menu
+  Improved HUD?
+  Music?
+  Sound effects?
+  Global upgrades?? (like a side panel for upgrades that affect everything)
+  
