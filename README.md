@@ -21,6 +21,7 @@ this might change things get removed other things get added etc
 things with a ? are especially still in thinking (but even things without are not final)
 
 Minimum Viable product ✔️
+<pre>
 Post MVP
   Blance changes
   Main menu
@@ -28,4 +29,4 @@ Post MVP
   Music?
   Sound effects?
   Global upgrades?? (like a side panel for upgrades that affect everything)
-  
+</pre>
