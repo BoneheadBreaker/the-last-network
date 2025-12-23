@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Enemy
 
-const SPEED = 300.0
+const SPEED = 230.0
 var health = 500
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D

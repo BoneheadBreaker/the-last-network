@@ -10,12 +10,7 @@ target_desired_distance = 39.95
 avoidance_enabled = true
 avoidance_layers = 7
 avoidance_mask = 7
-debug_enabled = true
 debug_path_custom_color = Color(0, 0.45925826, 0.9817087, 1)
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 71.0
-offset_bottom = 65.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(36, 33)

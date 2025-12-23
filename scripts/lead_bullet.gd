@@ -1,7 +1,7 @@
 extends Area2D
 
-const SPEED = 500 # the speed the bullet will travel at
-@export var DAMAGE = 100 # the amount of damage the bullet will do
+const SPEED = 600 # the speed the bullet will travel at
+@export var DAMAGE = 250 # the amount of damage the bullet will do
 
 func _physics_process(delta):
 	position += transform.x * SPEED * delta

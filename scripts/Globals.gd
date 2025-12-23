@@ -6,6 +6,7 @@ signal damage_last_node(amount) # called when an enemy damages the core, sends t
 signal core_died() # called when the core dies (it has no health left)
 signal resources_changed()
 signal wave_spawned(number) # called whenever a new wave starts, sends the wave id/number too
+signal start_game() # called when exiting the main menu and playing the game
 
 # HUD signals
 signal new_item_selected(selected_item)
