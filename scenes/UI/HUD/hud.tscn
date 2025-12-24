@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8yhy8pvwt33b"]
+[gd_scene load_steps=5 format=3 uid="uid://c8yhy8pvwt33b"]
 
 [ext_resource type="Script" uid="uid://du02skfat0cig" path="res://scripts/hud_handler.gd" id="1_15n47"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5f3yu"]
+font_size = 25
 
 [sub_resource type="LabelSettings" id="LabelSettings_sfuq3"]
 font_size = 10
@@ -16,6 +19,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_15n47")
+
+[node name="GlobalUpgradesMenu" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="GlobalUpgradesMenu"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GlobalUpgradesMenu"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GlobalUpgradesMenu/VBoxContainer"]
+layout_mode = 2
+text = "Global Upgrades"
+label_settings = SubResource("LabelSettings_5f3yu")
+horizontal_alignment = 1
+
+[node name="CoreHealthUpgrade" type="Button" parent="GlobalUpgradesMenu/VBoxContainer"]
+layout_mode = 2
+text = "MORE ENERGY
+core health +150"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -115,6 +144,19 @@ text = "turret"
 layout_mode = 2
 text = "wall"
 
+[node name="CoreHealthContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="CoreHealthContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="GlobalUpgradesMenu/VBoxContainer/CoreHealthUpgrade" to="." method="_on_core_health_upgrade_pressed"]
 [connection signal="mouse_entered" from="Toolbar/Control/HBoxContainer" to="." method="_on_h_box_container_mouse_entered"]
 [connection signal="mouse_exited" from="Toolbar/Control/HBoxContainer" to="." method="_on_h_box_container_mouse_exited"]
 [connection signal="mouse_entered" from="Toolbar/Control/HBoxContainer/turret" to="." method="_on_turret_mouse_entered"]
