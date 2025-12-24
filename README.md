@@ -1,3 +1,6 @@
+> [!Warning]
+> This project is still in ALPHA please dont judge too harshly
+
 # About
 
 The Last Network is tower defense game about defending a core (The Last Exit Node) it has a lore behind its creation but lets leave that for you to figure out when playing the full game (at the moment no lore has been implemented but after the Minimum Viable Product has been released that will be added in a future update!
