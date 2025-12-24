@@ -155,6 +155,7 @@ grow_vertical = 0
 
 [node name="Label" type="Label" parent="CoreHealthContainer"]
 layout_mode = 2
+text = "unknown"
 
 [connection signal="pressed" from="GlobalUpgradesMenu/VBoxContainer/CoreHealthUpgrade" to="." method="_on_core_health_upgrade_pressed"]
 [connection signal="mouse_entered" from="Toolbar/Control/HBoxContainer" to="." method="_on_h_box_container_mouse_entered"]
