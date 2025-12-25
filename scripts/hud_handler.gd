@@ -7,12 +7,12 @@ extends Control
 func _ready() -> void:
 	Globals.connect("resources_changed", Callable(self, "resources_changed")) # connect to the signal to see when packets are changed
 	Globals.connect("wave_spawned", Callable(self, "wave_spawned"))
-	Globals.connect("core_health_changed", Callable(self, ""))
+	Globals.connect("core_health_changed", Callable(self, "core_health_changed"))
 	packet_display.text = str(ResourceManager.Packets) # set the initial value
 	
 func core_health_changed(new_health):
 	print("a")
-	$CoreHealthContainer/Label.text = str(new_health)
+	$CoreHealthContainer/CoreHealthDisplay.text = str(new_health)
 
 func wave_spawned(wave_number):
 	wave_display.text = str("Wave: ", wave_number)
@@ -58,3 +58,12 @@ func _on_wall_mouse_exited() -> void:
 
 func _on_core_health_upgrade_pressed() -> void:
 	Globals.emit_signal("core_upgraded", Globals.core_upgrades.HEALTH)
+
+
+func _on_core_health_display_mouse_entered() -> void:
+	print("true")
+	Globals.mouse_over_HUD = true
+
+func _on_core_health_display_mouse_exited() -> void:
+	print("false")
+	Globals.mouse_over_HUD = false

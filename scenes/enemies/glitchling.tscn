@@ -32,7 +32,6 @@ shape = SubResource("RectangleShape2D_31yfd")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 avoidance_enabled = true
-debug_enabled = true
 
 [node name="AttackArea" type="Area2D" parent="."]
 

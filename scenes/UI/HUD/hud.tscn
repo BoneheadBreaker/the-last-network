@@ -153,7 +153,7 @@ offset_top = -40.0
 offset_right = 40.0
 grow_vertical = 0
 
-[node name="Label" type="Label" parent="CoreHealthContainer"]
+[node name="CoreHealthDisplay" type="Label" parent="CoreHealthContainer"]
 layout_mode = 2
 text = "unknown"
 
@@ -166,3 +166,5 @@ text = "unknown"
 [connection signal="mouse_entered" from="Toolbar/Control/HBoxContainer/wall" to="." method="_on_wall_mouse_entered"]
 [connection signal="mouse_exited" from="Toolbar/Control/HBoxContainer/wall" to="." method="_on_wall_mouse_exited"]
 [connection signal="pressed" from="Toolbar/Control/HBoxContainer/wall" to="." method="_on_wall_pressed"]
+[connection signal="mouse_entered" from="CoreHealthContainer/CoreHealthDisplay" to="." method="_on_core_health_display_mouse_entered"]
+[connection signal="mouse_exited" from="CoreHealthContainer/CoreHealthDisplay" to="." method="_on_core_health_display_mouse_exited"]
