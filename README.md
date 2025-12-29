@@ -33,3 +33,5 @@ Post MVP
   Sound effects?
   Global upgrades?? (like a side panel for upgrades that affect everything)
 </pre>
+
+I may have also added things I dont document here, but they are probably more minor changes/code reworks/additions etc
