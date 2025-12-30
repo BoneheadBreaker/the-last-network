@@ -6,10 +6,15 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.connect("resources_changed", Callable(self, "resources_changed")) # connect to the signal to see when packets are changed
-	Globals.connect("wave_spawned", Callable(self, "_wave_spawned"))
+	Globals.connect("wave_spawned", Callable(self, "wave_spawned"))
+	Globals.connect("core_health_changed", Callable(self, "core_health_changed"))
 	packet_display.text = str(ResourceManager.Packets) # set the initial value
 	
-func _wave_spawned(wave_number):
+func core_health_changed(new_health):
+	print("a")
+	$CoreHealthContainer/CoreHealthDisplay.text = str(new_health)
+
+func wave_spawned(wave_number):
 	wave_display.text = str("Wave: ", wave_number)
 
 func resources_changed():
@@ -26,27 +31,3 @@ func _on_turret_pressed() -> void:
 
 func _on_wall_pressed() -> void:
 	Globals.emit_signal("new_item_selected", Globals.build_options.WALL)
-
-func _on_h_box_container_mouse_entered() -> void:
-	print("true")
-	Globals.mouse_over_HUD = true
-	
-func _on_h_box_container_mouse_exited() -> void:
-	print("false")
-	Globals.mouse_over_HUD = false
-
-func _on_turret_mouse_entered() -> void:
-	print("true")
-	Globals.mouse_over_HUD = true
-
-func _on_turret_mouse_exited() -> void:
-	print("false")
-	Globals.mouse_over_HUD = false
-
-func _on_wall_mouse_entered() -> void:
-	print("true")
-	Globals.mouse_over_HUD = true
-
-func _on_wall_mouse_exited() -> void:
-	print("false")
-	Globals.mouse_over_HUD = false

@@ -11,6 +11,9 @@ func _ready():
 	Globals.connect("new_item_selected", Callable(self, "_item_selected"))
 
 func _process(delta):
+	pass
+
+func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("place_tower"):
 		if Globals.mouse_over_HUD == false: # if the mouse is NOT over any HUD
 			if Globals.current_selection == Globals.build_options.WALL: # If they are trying to build a wall (if a wall is the selected thing)

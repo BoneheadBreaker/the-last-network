@@ -10,6 +10,7 @@ script = ExtResource("1_tefeu")
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="main_menu" parent="GUI" instance=ExtResource("4_o6xl0")]
+mouse_filter = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("2_0wfyh")
