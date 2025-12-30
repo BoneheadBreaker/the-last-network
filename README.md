@@ -1,11 +1,14 @@
+> [!Warning]
+> This project is still in ALPHA please dont judge too harshly
+
 # About
 
 The Last Network is tower defense game about defending a core (The Last Exit Node) it has a lore behind its creation but lets leave that for you to figure out when playing the full game (at the moment no lore has been implemented but after the Minimum Viable Product has been released that will be added in a future update!
 # Installation
 
-at the moment the best way to install the game is to download godot, clone the project and open it with godot (then use godots play button)
+To install the latest "stable" version you can just install the .exe
 
-once the game is developed more I plan on having beta builds which will be purely in source code and then after testing, the beta build will be merged with main and a downloadable .exe will be released! possibly along with other methods to install.
+To install the latest version (not stable, but latest changes) you can git clone the repo and run it in godot
 
 # Future
 
@@ -30,3 +33,5 @@ Post MVP
   Sound effects?
   Global upgrades?? (like a side panel for upgrades that affect everything)
 </pre>
+
+may have also added things I dont document here, but they are probably more minor changes/code reworks/additions etc
