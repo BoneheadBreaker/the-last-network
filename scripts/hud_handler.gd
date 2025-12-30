@@ -31,39 +31,3 @@ func _on_turret_pressed() -> void:
 
 func _on_wall_pressed() -> void:
 	Globals.emit_signal("new_item_selected", Globals.build_options.WALL)
-
-func _on_h_box_container_mouse_entered() -> void:
-	print("true")
-	Globals.mouse_over_HUD = true
-	
-func _on_h_box_container_mouse_exited() -> void:
-	print("false")
-	Globals.mouse_over_HUD = false
-
-func _on_turret_mouse_entered() -> void:
-	print("true")
-	Globals.mouse_over_HUD = true
-
-func _on_turret_mouse_exited() -> void:
-	print("false")
-	Globals.mouse_over_HUD = false
-
-func _on_wall_mouse_entered() -> void:
-	print("true")
-	Globals.mouse_over_HUD = true
-
-func _on_wall_mouse_exited() -> void:
-	print("false")
-	Globals.mouse_over_HUD = false
-
-func _on_core_health_upgrade_pressed() -> void:
-	Globals.emit_signal("core_upgraded", Globals.core_upgrades.HEALTH)
-
-
-func _on_core_health_display_mouse_entered() -> void:
-	print("true")
-	Globals.mouse_over_HUD = true
-
-func _on_core_health_display_mouse_exited() -> void:
-	print("false")
-	Globals.mouse_over_HUD = false

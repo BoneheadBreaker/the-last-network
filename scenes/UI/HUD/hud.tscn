@@ -18,6 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_15n47")
 
 [node name="GlobalUpgradesMenu" type="PanelContainer" parent="."]
@@ -32,16 +33,16 @@ grow_vertical = 2
 [node name="Panel" type="Panel" parent="GlobalUpgradesMenu"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GlobalUpgradesMenu"]
+[node name="GlobalUpgrades" type="VBoxContainer" parent="GlobalUpgradesMenu"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GlobalUpgradesMenu/VBoxContainer"]
+[node name="Label" type="Label" parent="GlobalUpgradesMenu/GlobalUpgrades"]
 layout_mode = 2
 text = "Global Upgrades"
 label_settings = SubResource("LabelSettings_5f3yu")
 horizontal_alignment = 1
 
-[node name="CoreHealthUpgrade" type="Button" parent="GlobalUpgradesMenu/VBoxContainer"]
+[node name="CoreHealthUpgrade" type="Button" parent="GlobalUpgradesMenu/GlobalUpgrades"]
 layout_mode = 2
 text = "MORE ENERGY
 core health +150"
@@ -97,9 +98,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Control" type="Control" parent="MarginContainer2"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="WaveDisplay" type="Label" parent="MarginContainer2/Control"]
 layout_mode = 1
@@ -119,9 +122,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Control" type="Control" parent="Toolbar"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Toolbar/Control"]
 layout_mode = 1
@@ -157,14 +162,6 @@ grow_vertical = 0
 layout_mode = 2
 text = "unknown"
 
-[connection signal="pressed" from="GlobalUpgradesMenu/VBoxContainer/CoreHealthUpgrade" to="." method="_on_core_health_upgrade_pressed"]
-[connection signal="mouse_entered" from="Toolbar/Control/HBoxContainer" to="." method="_on_h_box_container_mouse_entered"]
-[connection signal="mouse_exited" from="Toolbar/Control/HBoxContainer" to="." method="_on_h_box_container_mouse_exited"]
-[connection signal="mouse_entered" from="Toolbar/Control/HBoxContainer/turret" to="." method="_on_turret_mouse_entered"]
-[connection signal="mouse_exited" from="Toolbar/Control/HBoxContainer/turret" to="." method="_on_turret_mouse_exited"]
+[connection signal="pressed" from="GlobalUpgradesMenu/GlobalUpgrades/CoreHealthUpgrade" to="." method="_on_core_health_upgrade_pressed"]
 [connection signal="pressed" from="Toolbar/Control/HBoxContainer/turret" to="." method="_on_turret_pressed"]
-[connection signal="mouse_entered" from="Toolbar/Control/HBoxContainer/wall" to="." method="_on_wall_mouse_entered"]
-[connection signal="mouse_exited" from="Toolbar/Control/HBoxContainer/wall" to="." method="_on_wall_mouse_exited"]
 [connection signal="pressed" from="Toolbar/Control/HBoxContainer/wall" to="." method="_on_wall_pressed"]
-[connection signal="mouse_entered" from="CoreHealthContainer/CoreHealthDisplay" to="." method="_on_core_health_display_mouse_entered"]
-[connection signal="mouse_exited" from="CoreHealthContainer/CoreHealthDisplay" to="." method="_on_core_health_display_mouse_exited"]
