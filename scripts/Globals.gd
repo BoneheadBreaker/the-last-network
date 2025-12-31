@@ -26,5 +26,5 @@ enum build_options {
 }
 
 enum core_upgrades {
-	HEALTH
+	HEALTH_1
 }

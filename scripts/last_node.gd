@@ -5,7 +5,7 @@ var health = 100
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.connect("damage_last_node", Callable(self, "take_damage")) # connect to its signal to hear when something broadcasts
-	Globals.connect("core_upgraded", Callable(self, "upgraded_core"))
+	Globals.connect("core_upgraded", Callable(self, "core_upgraded"))
 	Globals.last_node = self
 
 func take_damage(amount):
@@ -16,8 +16,8 @@ func take_damage(amount):
 		Globals.emit_signal("core_died")
 		print("exit node died..... GAME OVER")
 
-func upgrade_core(upgrade):
-	if upgrade == Globals.core_upgrades.HEALTH:
+func core_upgraded(upgrade):
+	if upgrade == Globals.core_upgrades.HEALTH_1:
 		health += 150
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

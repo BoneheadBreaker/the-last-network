@@ -31,3 +31,6 @@ func _on_turret_pressed() -> void:
 
 func _on_wall_pressed() -> void:
 	Globals.emit_signal("new_item_selected", Globals.build_options.WALL)
+
+func _on_core_health_upgrade_pressed() -> void:
+	Globals.emit_signal("core_upgraded", Globals.core_upgrades.HEALTH_1)

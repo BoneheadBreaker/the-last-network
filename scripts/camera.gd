@@ -32,9 +32,8 @@ func _process(delta):
 		zoom += Vector2(zoom_speed, zoom_speed)
 		zoom.x = clamp(zoom.x, min_zoom, max_zoom)
 		zoom.y = clamp(zoom.y, min_zoom, max_zoom)
-		print(zoom)
+		
 	if Input.is_action_just_pressed("zoom_in"):
 		zoom -= Vector2(zoom_speed, zoom_speed)
 		zoom.x = clamp(zoom.x, min_zoom, max_zoom)
 		zoom.y = clamp(zoom.y, min_zoom, max_zoom)
-		print(zoom)

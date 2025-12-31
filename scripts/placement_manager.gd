@@ -38,29 +38,8 @@ func would_block_path(world_mouse_pos, tile_coords): # test if enemy navigation 
 	agent.target_position = Globals.last_node.position
 	$Floor.notify_runtime_tile_data_update()
 	
-	# Give some frames to update the navigation
-	await get_tree().process_frame
-	await get_tree().process_frame
-	await get_tree().process_frame
-	await get_tree().process_frame
-	await get_tree().process_frame
-	await get_tree().process_frame
-	await get_tree().process_frame
-	await get_tree().process_frame
-	await get_tree().process_frame
-	await get_tree().process_frame
-	await get_tree().process_frame
-	
 	agent.target_position = Globals.last_node.position
 	$Floor.notify_runtime_tile_data_update()
-
-	await get_tree().process_frame
-	await get_tree().process_frame
-	await get_tree().process_frame
-	await get_tree().process_frame
-	await get_tree().process_frame
-	await get_tree().process_frame
-	await get_tree().process_frame
 
 	if agent.is_target_reachable():
 		print("reachable OR IS IT")
