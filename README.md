@@ -1,5 +1,5 @@
 > [!Warning]
-> This project is still in ALPHA please dont judge too harshly
+> This project is close to being archived, it has taught me enough, **sorry!**
 
 # About
 
